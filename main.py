@@ -25,8 +25,12 @@ def tot(rr, key):
             t += v
     return t
 
-t = tot(rr, "foo")
-print(t)
+kk = set() 
+for k, v in rr:
+    kk.add(k)
+for k in kk:
+    t = tot(rr, k)
+    print(k, t)
 
 
 
