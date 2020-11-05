@@ -18,5 +18,13 @@ def read(data):
 
 rr = read(data)
 
+t = 0
+for k, v in rr:
+    if k == "foo":
+        t += v
+print(t)
+
+
+
 
 
