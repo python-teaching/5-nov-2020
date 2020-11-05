@@ -18,10 +18,14 @@ def read(data):
 
 rr = read(data)
 
-t = 0
-for k, v in rr:
-    if k == "foo":
-        t += v
+def tot(rr, key):
+    t = 0
+    for k, v in rr:
+        if k == key:
+            t += v
+    return t
+
+t = tot(rr, "foo")
 print(t)
 
 
