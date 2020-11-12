@@ -6,6 +6,7 @@ bar  90
 zot 100
 bar 666
 """.split("\n")
+
 def read(data):
     rr = list()
     for r in data:
@@ -18,19 +19,38 @@ def read(data):
 
 rr = read(data)
 
-def tot(rr, key):
+def single_tot(rr, key):
     t = 0
     for k, v in rr:
         if k == key:
             t += v
     return t
 
-kk = set() 
-for k, v in rr:
-    kk.add(k)
-for k in kk:
-    t = tot(rr, k)
-    print(k, t)
+tot_foo = single_tot(rr, "foo")
+
+def totals(rr):
+    kk = set() 
+    tt = list()
+    for k, v in rr:
+        kk.add(k)
+    for k in kk:
+        t = single_tot(rr, k)
+        tt.append((k, t))
+    return tt
+
+tt = totals(rr)
+
+for k,v in tt:
+    f = "Key %s -> Tot: %d"
+    s = f % (k, v)  
+    print(s)
+
+
+
+
+
+
+
 
 
 
