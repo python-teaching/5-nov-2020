@@ -40,11 +40,13 @@ def totals(rr):
 
 tt = totals(rr)
 
-for k,v in tt:
+def output(tt):
     f = "Key %s -> Tot: %d"
-    s = f % (k, v)  
-    print(s)
+    for k,v in tt:
+        s = f % (k, v)  
+        print(s)
 
+output(tt)
 
 
 
